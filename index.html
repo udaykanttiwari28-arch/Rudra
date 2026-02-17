@@ -269,10 +269,6 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #fff; line-heigh
   gap: 24px;
   margin-bottom: 60px;
 }
-/* 13 service cards in 3-col: last card (13th) sits alone — centre it */
-.services-grid .service-card:last-child:nth-child(3n + 1) {
-  grid-column: 2 / 3;
-}
 .service-card {
   padding: 36px 28px;
   background: rgba(255,255,255,0.02);
@@ -729,10 +725,6 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #fff; line-heigh
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  /* Reset desktop 3-col centering trick for 2-col layout */
-  .services-grid .service-card:last-child:nth-child(3n + 1) { grid-column: auto; }
-  /* 13 service cards in 2-col: last card (13th, odd position) — centre it */
-  .services-grid .service-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: calc(50% - 10px); margin: 0 auto; }
   .completed-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
   /* 28 projects in 3-col: last row has 1 card — centre it */
   .completed-grid .project-card:last-child:nth-child(3n - 2):nth-last-child(1) { grid-column: 2 / 3; }
@@ -812,9 +804,6 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #fff; line-heigh
   .section-desc { font-size: 0.88rem; margin-bottom: 32px; }
   .section-label { font-size: 0.7rem; letter-spacing: 3px; }
   .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 36px; }
-  /* Reset 1024px 2-col centering override; apply fresh 2-col centering for 13th odd card */
-  .services-grid .service-card:last-child:nth-child(3n + 1) { grid-column: auto; }
-  .services-grid .service-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: calc(50% - 6px); margin: 0 auto; }
   .service-card { padding: 24px 18px; }
   .service-icon { width: 48px; height: 48px; margin-bottom: 14px; }
   .service-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
@@ -903,10 +892,7 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #fff; line-heigh
   .about-highlight h4 { font-size: 1.1rem; }
   .about-highlight p { font-size: 0.72rem; }
 
-  /* Services: go single column on 480px — reset all centering tricks */
   .services-grid { grid-template-columns: 1fr; gap: 12px; }
-  .services-grid .service-card:last-child:nth-child(3n + 1),
-  .services-grid .service-card:last-child:nth-child(odd) { grid-column: auto; max-width: none; margin: 0; }
   .service-card { padding: 24px 18px; }
   .core-caps-row { grid-template-columns: 1fr 1fr; gap: 10px; }
 
@@ -1195,6 +1181,16 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #fff; line-heigh
         </div>
         <h3>Row Houses &amp; Bungalows</h3>
         <p>Individual homes and villa construction crafted with attention to detail and quality living.</p>
+      </div>
+
+      <!-- 14. CTA Card -->
+      <div class="service-card service-card--cta fade-in" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(201,162,39,0.06);border-color:rgba(201,162,39,0.2);">
+        <div class="service-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h3>Have a Project in Mind?</h3>
+        <p style="margin-bottom:20px;">Let's discuss your requirements and bring your vision to life.</p>
+        <a href="tel:+919881200091" class="btn btn-gold btn-sm">Call Us Now</a>
       </div>
 
     </div>
